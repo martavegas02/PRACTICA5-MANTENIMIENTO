@@ -49,6 +49,34 @@ public class ArrayBoundedQueueTest {
         * 1. Comprobar que el método get lanza una excepción si la cola está vacía.
         * 2. Comprobar que el método get devuelve el primer elemento de la cola y actualiza el tamaño correctamente.
     */
+    @Test 
+    public void testGet(){
+        ArrayBoundedQueue<Integer> queue = new ArrayBoundedQueue<>(5);
+
+        queue.put(7);
+        queue.put(8);
+        queue.put(9);
+
+        assertThat(queue.get())
+            .isEqualTo(7);
+
+        assertThat(queue.size())
+            .isEqualTo(2);
+
+        assertThat(queue.getFirst())
+            .isEqualTo(1);
+
+        assertThat(queue.getLast())
+            .isEqualTo(3);
+
+        queue.get();
+        queue.get();
+
+        assertThatThrownBy(() -> queue.get())
+            .isInstanceOf(EmptyBoundedQueueException.class)
+            .hasMessageContaining("get: empty bounded queue");
+            
+    }
 
     /*   advance 
      * 1. Comprobar que el método advance devuelve el índice correcto del siguiente elemento en la cola.
@@ -63,14 +91,6 @@ public class ArrayBoundedQueueTest {
         * 1. Comprobar que el método isEmpty devuelve true si la cola está vacía.
         * 2. Comprobar que el método isEmpty devuelve false si la cola no está vacía.
     */
-
-    /*  getFirst
-        * 1. Comprobar que el método getFirst devuelve el índice del primer elemento de la cola.
-     */
-
-    /*  getLast
-     * 1. Comprobar que el método getLast devuelve el índice del último elemento de la cola.
-     */
 
     
 }
