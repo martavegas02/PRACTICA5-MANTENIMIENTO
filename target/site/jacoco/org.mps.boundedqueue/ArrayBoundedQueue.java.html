@@ -47,11 +47,19 @@ public class ArrayBoundedQueue&lt;T&gt; implements BoundedQueue&lt;T&gt; {
 
     @Override
     public void put(T value) {
+<<<<<<< HEAD
 <span class="fc bfc" id="L50" title="All 2 branches covered.">        if (isFull()) {</span>
 <span class="fc" id="L51">            throw new FullBoundedQueueException(&quot;put: full bounded queue&quot;);</span>
         }
 <span class="fc bfc" id="L53" title="All 2 branches covered.">        if (value == null) {</span>
 <span class="fc" id="L54">            throw new IllegalArgumentException(&quot;put: element cannot be null&quot;);</span>
+=======
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">        if (isFull()) {</span>
+<span class="nc" id="L51">            throw new FullBoundedQueueException(&quot;put: full bounded queue&quot;);</span>
+        }
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        if (value == null) {</span>
+<span class="nc" id="L54">            throw new IllegalArgumentException(&quot;put: element cannot be null&quot;);</span>
+>>>>>>> 26e6b7d7b939d146b1faf5d96674eff1ecca092b
         }
 
 <span class="fc" id="L57">        buffer[nextFree] = value;</span>
@@ -61,8 +69,13 @@ public class ArrayBoundedQueue&lt;T&gt; implements BoundedQueue&lt;T&gt; {
 
     @Override
     public T get() {
+<<<<<<< HEAD
 <span class="pc bpc" id="L64" title="1 of 2 branches missed.">        if (isEmpty()) {</span>
 <span class="nc" id="L65">            throw new EmptyBoundedQueueException(&quot;get: empty bounded queue&quot;);</span>
+=======
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (isEmpty()) {</span>
+<span class="fc" id="L65">            throw new EmptyBoundedQueueException(&quot;get: empty bounded queue&quot;);</span>
+>>>>>>> 26e6b7d7b939d146b1faf5d96674eff1ecca092b
         }
 
 <span class="fc" id="L68">        T item = buffer[first];</span>
@@ -78,7 +91,11 @@ public class ArrayBoundedQueue&lt;T&gt; implements BoundedQueue&lt;T&gt; {
 
     @Override
     public boolean isFull() {
+<<<<<<< HEAD
 <span class="fc bfc" id="L81" title="All 2 branches covered.">        return size == buffer.length;</span>
+=======
+<span class="pc bpc" id="L81" title="1 of 2 branches missed.">        return size == buffer.length;</span>
+>>>>>>> 26e6b7d7b939d146b1faf5d96674eff1ecca092b
     }
 
     @Override

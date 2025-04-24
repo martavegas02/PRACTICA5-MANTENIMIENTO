@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.mps.boundedqueue.ArrayBoundedQueueTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.297 s -- in org.mps.boundedqueue.ArrayBoundedQueueTest
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.192 s -- in org.mps.boundedqueue.ArrayBoundedQueueTest
+>>>>>>> 26e6b7d7b939d146b1faf5d96674eff1ecca092b
