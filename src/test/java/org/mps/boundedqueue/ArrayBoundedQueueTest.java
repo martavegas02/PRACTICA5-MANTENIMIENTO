@@ -1,5 +1,8 @@
 package org.mps.boundedqueue;
 
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
+
 public class ArrayBoundedQueueTest {
     
 
@@ -9,6 +12,31 @@ public class ArrayBoundedQueueTest {
      * 2. Comprobar que el constructor crea un objeto ArrayBoundedQueue con la capacidad correcta.
      * 3. Comprobar que el constructor crea un objeto ArrayBoundedQueue vacío.
      */
+
+    @Test
+    public void testConstructor() {
+        assertThatThrownBy( () -> new ArrayBoundedQueue<>(-1))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("ArrayBoundedException: capacity must be positive");
+
+        ArrayBoundedQueue <Integer> queue = new ArrayBoundedQueue<>(5);
+        
+        assertThat(queue)
+            .isNotNull();
+
+        assertThat(queue.size())
+            .isZero();
+        
+        assertThat(queue.isEmpty())
+            .isTrue();
+
+        assertThat(queue.getFirst())
+            .isEqualTo(0);
+
+        assertThat(queue.getLast())
+            .isEqualTo(0);
+
+    }
 
 
     /*   put
