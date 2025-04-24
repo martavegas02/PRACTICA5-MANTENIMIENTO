@@ -1,5 +1,5 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 assertJ,org.mps.boundedqueue,FullBoundedQueueException,0,4,0,0,0,2,0,1,0,1
-assertJ,org.mps.boundedqueue,ArrayBoundedQueue,5,125,0,12,1,29,1,15,1,9
-assertJ,org.mps.boundedqueue,ArrayBoundedQueue.ArrayBoundedQueueIterator,53,0,4,0,11,0,5,0,3,0
+assertJ,org.mps.boundedqueue,ArrayBoundedQueue,0,130,0,12,0,30,0,16,0,10
+assertJ,org.mps.boundedqueue,ArrayBoundedQueue.ArrayBoundedQueueIterator,0,53,0,4,0,11,0,5,0,3
 assertJ,org.mps.boundedqueue,EmptyBoundedQueueException,0,4,0,0,0,2,0,1,0,1

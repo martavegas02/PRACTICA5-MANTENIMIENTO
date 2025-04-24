@@ -103,7 +103,7 @@ public class ArrayBoundedQueue&lt;T&gt; implements BoundedQueue&lt;T&gt; {
 
     @Override
     public Iterator&lt;T&gt; iterator() {
-<span class="nc" id="L106">        return new ArrayBoundedQueueIterator();</span>
+<span class="fc" id="L106">        return new ArrayBoundedQueueIterator();</span>
     }
 
     private class ArrayBoundedQueueIterator implements Iterator&lt;T&gt; {
@@ -111,25 +111,25 @@ public class ArrayBoundedQueue&lt;T&gt; implements BoundedQueue&lt;T&gt; {
         private int current; // index of the element to be visited
         private int visited; // number of visited elements
 
-<span class="nc" id="L114">        public ArrayBoundedQueueIterator() {</span>
-<span class="nc" id="L115">            current = first;</span>
-<span class="nc" id="L116">            visited = 0;</span>
-<span class="nc" id="L117">        }</span>
+<span class="fc" id="L114">        public ArrayBoundedQueueIterator() {</span>
+<span class="fc" id="L115">            current = first;</span>
+<span class="fc" id="L116">            visited = 0;</span>
+<span class="fc" id="L117">        }</span>
 
         @Override
         public boolean hasNext() {
-<span class="nc bnc" id="L121" title="All 2 branches missed.">            return visited &lt; size;</span>
+<span class="fc bfc" id="L121" title="All 2 branches covered.">            return visited &lt; size;</span>
         }
 
         @Override
         public T next() {
-<span class="nc bnc" id="L126" title="All 2 branches missed.">            if (!hasNext()) {</span>
-<span class="nc" id="L127">                throw new NoSuchElementException(&quot;next: bounded queue iterator exhausted&quot;);</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">            if (!hasNext()) {</span>
+<span class="fc" id="L127">                throw new NoSuchElementException(&quot;next: bounded queue iterator exhausted&quot;);</span>
             }
-<span class="nc" id="L129">            T item = buffer[current];</span>
-<span class="nc" id="L130">            current = advance(current);</span>
-<span class="nc" id="L131">            visited++;</span>
-<span class="nc" id="L132">            return item;</span>
+<span class="fc" id="L129">            T item = buffer[current];</span>
+<span class="fc" id="L130">            current = advance(current);</span>
+<span class="fc" id="L131">            visited++;</span>
+<span class="fc" id="L132">            return item;</span>
         }
     }
 }
