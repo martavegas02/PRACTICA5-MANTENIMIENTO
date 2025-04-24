@@ -45,6 +45,33 @@ public class ArrayBoundedQueueTest {
      * 3. Comprobar que el método put añade un elemento a la cola y actualiza el tamaño correctamente.
      */ 
 
+    @Test
+    public void testPut() {
+        ArrayBoundedQueue<Integer> queue = new ArrayBoundedQueue<>(3);
+        
+        queue.put(1);
+        queue.put(2);
+        queue.put(3);
+
+
+        assertThatThrownBy(() -> queue.put(null))
+            .isInstanceOf(FullBoundedQueueException.class)
+            .hasMessageContaining("put: full bounded queue");
+
+        assertThat(queue.isFull())
+            .isTrue();
+
+        assertThat(queue.get())
+            .isEqualTo(1);
+
+        assertThatThrownBy(() -> queue.put(null))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining("put: element cannot be null");
+
+        assertThat(queue.size())
+            .isEqualTo(2);
+    }
+
     /*   get
         * 1. Comprobar que el método get lanza una excepción si la cola está vacía.
         * 2. Comprobar que el método get devuelve el primer elemento de la cola y actualiza el tamaño correctamente.

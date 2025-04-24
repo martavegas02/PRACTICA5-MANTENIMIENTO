@@ -47,43 +47,43 @@ public class ArrayBoundedQueue&lt;T&gt; implements BoundedQueue&lt;T&gt; {
 
     @Override
     public void put(T value) {
-<span class="nc bnc" id="L50" title="All 2 branches missed.">        if (isFull()) {</span>
-<span class="nc" id="L51">            throw new FullBoundedQueueException(&quot;put: full bounded queue&quot;);</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (isFull()) {</span>
+<span class="fc" id="L51">            throw new FullBoundedQueueException(&quot;put: full bounded queue&quot;);</span>
         }
-<span class="nc bnc" id="L53" title="All 2 branches missed.">        if (value == null) {</span>
-<span class="nc" id="L54">            throw new IllegalArgumentException(&quot;put: element cannot be null&quot;);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (value == null) {</span>
+<span class="fc" id="L54">            throw new IllegalArgumentException(&quot;put: element cannot be null&quot;);</span>
         }
 
-<span class="nc" id="L57">        buffer[nextFree] = value;</span>
-<span class="nc" id="L58">        nextFree = advance(nextFree);</span>
-<span class="nc" id="L59">        size++;</span>
-<span class="nc" id="L60">    }</span>
+<span class="fc" id="L57">        buffer[nextFree] = value;</span>
+<span class="fc" id="L58">        nextFree = advance(nextFree);</span>
+<span class="fc" id="L59">        size++;</span>
+<span class="fc" id="L60">    }</span>
 
     @Override
     public T get() {
-<span class="nc bnc" id="L64" title="All 2 branches missed.">        if (isEmpty()) {</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        if (isEmpty()) {</span>
 <span class="nc" id="L65">            throw new EmptyBoundedQueueException(&quot;get: empty bounded queue&quot;);</span>
         }
 
-<span class="nc" id="L68">        T item = buffer[first];</span>
-<span class="nc" id="L69">        buffer[first] = null;</span>
-<span class="nc" id="L70">        first = advance(first);</span>
-<span class="nc" id="L71">        size--;</span>
-<span class="nc" id="L72">        return item;</span>
+<span class="fc" id="L68">        T item = buffer[first];</span>
+<span class="fc" id="L69">        buffer[first] = null;</span>
+<span class="fc" id="L70">        first = advance(first);</span>
+<span class="fc" id="L71">        size--;</span>
+<span class="fc" id="L72">        return item;</span>
     }
 
     private int advance(int index) {
-<span class="nc" id="L76">        return (index + 1) % buffer.length;</span>
+<span class="fc" id="L76">        return (index + 1) % buffer.length;</span>
     }
 
     @Override
     public boolean isFull() {
-<span class="nc bnc" id="L81" title="All 2 branches missed.">        return size == buffer.length;</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        return size == buffer.length;</span>
     }
 
     @Override
     public boolean isEmpty() {
-<span class="pc bpc" id="L86" title="1 of 2 branches missed.">        return size == 0;</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        return size == 0;</span>
     }
 
     @Override
@@ -93,7 +93,7 @@ public class ArrayBoundedQueue&lt;T&gt; implements BoundedQueue&lt;T&gt; {
 
     @Override
     public int getFirst() {
-<span class="nc" id="L96">        return this.first;</span>
+<span class="fc" id="L96">        return this.first;</span>
     }
 
     @Override
