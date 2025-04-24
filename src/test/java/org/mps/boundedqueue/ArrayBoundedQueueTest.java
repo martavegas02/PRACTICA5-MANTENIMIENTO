@@ -1,6 +1,8 @@
 package org.mps.boundedqueue;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Nested;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class ArrayBoundedQueueTest {
@@ -105,19 +107,7 @@ public class ArrayBoundedQueueTest {
             
     }
 
-    /*   advance 
-     * 1. Comprobar que el método advance devuelve el índice correcto del siguiente elemento en la cola.
-     */
-
-    /*   isFull
-     * 1. Comprobar que el método isFull devuelve true si la cola está llena.
-     * 2. Comprobar que el método isFull devuelve false si la cola no está llena.
-     */
-
-    /*   isEmpty
-        * 1. Comprobar que el método isEmpty devuelve true si la cola está vacía.
-        * 2. Comprobar que el método isEmpty devuelve false si la cola no está vacía.
-    */
+    
 
     
 }
